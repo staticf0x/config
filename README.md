@@ -1,2 +1,3 @@
-# config
-Config files
+# Config files
+
+- [fish](fish.md)
