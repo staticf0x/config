@@ -2,7 +2,7 @@
 
 `~/.config/fish/config.fish`
 
-```
+```fish
 # Aliases
 # DNF
 alias cu='sudo dnf check-update'
