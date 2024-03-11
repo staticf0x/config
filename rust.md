@@ -13,5 +13,8 @@ cargo install jless tokei tailspin csvlens hyperfine
 # Optional
 
 ```
-cargo install just xsv
+cargo install just
+cargo install qsv --locked --bin qsvlite -F lite
 ```
+
+See [Installation options for qsv](https://github.com/jqnatividad/qsv?tab=readme-ov-file#option-3-install-with-rust) for other options.
