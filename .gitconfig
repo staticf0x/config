@@ -1,0 +1,35 @@
+[alias]
+    co = checkout
+    s = status
+    c = commit
+    b = branch -v
+    l = log --graph --date-order --abbrev-commit --decorate --date=short --format=format:'%C(red)%h%C(reset) - %C(blue)%an%C(reset) %C(green)%ad%C(reset) %C(white)%s%C(reset)%C(bold yellow)%d%C(reset)' --all
+    lr = log --graph --date-order --abbrev-commit --decorate --date=relative --format=format:'%C(red)%h%C(reset) - %C(blue)%an%C(reset) %C(green)%ad%C(reset) %C(white)%s%C(reset)%C(bold yellow)%d%C(reset)' --all
+    d = diff --patience
+    dc = diff --patience --cached
+    a = add
+    ap = add -p
+    m = merge --no-ff
+    p = push
+    rebase-upstream = pull --rebase upstream master
+[user]
+    name = <name>
+    email = <email>
+    signingkey = <`gpg --list-secret-keys --keyid-format=long` and take the part from rsa4096/<this key>>
+[push]
+    default = current
+[pull]
+    rebase = true
+[merge]
+    ff = no
+[diff]
+    algorithm = patience
+[core]
+    editor = hx
+[commit]
+    gpgsign = true
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
