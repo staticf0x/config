@@ -26,6 +26,7 @@ alias py3='python3'
 alias ipy='ipython3'
 alias py3Profile='py3 -m cProfile -s time'
 alias diffstat='diffstat -C'
+alias pip3update='pip3 list --outdated --user --format json | jq ".[].name" | sd \'"\' \'\' | string join " "'
 
 # Env
 set -x DOCKER_HOST unix:///run/user/(id -u)/podman/podman.sock
