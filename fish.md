@@ -31,6 +31,7 @@ alias pip3update='pip3 list --outdated --user --format json | jq ".[].name" | sd
 # Env
 set -x DOCKER_HOST unix:///run/user/(id -u)/podman/podman.sock
 set -x EXA_COLORS "tm=2:mu=35:lo=35:*.dll=0:do=94:sc=0:*.lock=2"
+set -x PYTHONBREAKPOINT "pudb.set_trace"
 
 # Other
 set EDITOR hx
