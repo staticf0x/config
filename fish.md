@@ -7,7 +7,7 @@
 # DNF
 alias cu='sudo dnf check-update'
 alias dnfi='sudo dnf install'
-alias dnfe='sudo dnf erase'
+alias dnfe='sudo dnf remove'
 alias dnfu='sudo dnf update'
 alias dnfhl='sudo dnf history list | head -n 15'
 alias dnfhu='sudo dnf history undo'
