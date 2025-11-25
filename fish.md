@@ -47,8 +47,11 @@ bind \es 'echo ""; git s; commandline -f repaint;'
 bind \ed 'echo ""; git d; commandline -f repaint;'
 bind \ec 'echo ""; git dc; commandline -f repaint;'
 
-# Use fish v3 alt-backspace behaviour
+# Use fish v3 alt-* behaviour
+bind alt-left prevd-or-backward-word
+bind alt-right nextd-or-forward-word
 bind alt-backspace backward-kill-word
+bind alt-delete kill-word
 
 # Workaround for https://github.com/helix-editor/helix/issues/10089
 function hx
