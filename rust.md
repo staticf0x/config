@@ -1,13 +1,13 @@
 # Install everything
 
 ```
-cargo install cargo-update bat broot choose eza fd-find ripgrep sd
+cargo install cargo-update bat broot choose eza fd-find ripgrep sd zoxide
 ```
 
 # Development tools
 
 ```
-cargo install jless tokei tailspin csvlens hyperfine
+cargo install jless tokei tailspin csvlens hyperfine difftastic cargo-edit
 ```
 
 # Optional
