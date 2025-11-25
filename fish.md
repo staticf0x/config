@@ -28,20 +28,33 @@ alias py3Profile='py3 -m cProfile -s time'
 alias diffstat='diffstat -C'
 alias pip3update='pip3 list --outdated --user --format json | jq ".[].name" | sd \'"\' \'\' | string join " "'
 
-# Env
-set -x DOCKER_HOST unix:///run/user/(id -u)/podman/podman.sock
-set -x EXA_COLORS "tm=2:mu=35:lo=35:*.dll=0:do=94:sc=0:*.lock=2"
-set -x PYTHONBREAKPOINT "pudb.set_trace"
-
-# Other
-set EDITOR hx
+# Paths
 set PATH $PATH /home/user/bin
 set PATH $PATH /home/user/.cargo/bin
 set PATH $PATH /home/user/.local/bin
+set PATH $PATH /home/user/node_modules/.bin
 
+# Env
+set EDITOR hx
+set -x REQUESTS_CA_BUNDLE /etc/ssl/certs/ca-bundle.crt
+set -x DOCKER_HOST unix:///run/user/(id -u)/podman/podman.sock
+set -x PYTHONPATH .
+set -x PYTHONBREAKPOINT "pudb.set_trace"
+set -x EXA_COLORS "tm=2:mu=35:lo=35:*.dll=0:do=94:sc=0:*.lock=2"
+
+# Key bindings
 bind \es 'echo ""; git s; commandline -f repaint;'
 bind \ed 'echo ""; git d; commandline -f repaint;'
 bind \ec 'echo ""; git dc; commandline -f repaint;'
+
+# Use fish v3 alt-backspace behaviour
+bind alt-backspace backward-kill-word
+
+# Workaround for https://github.com/helix-editor/helix/issues/10089
+function hx
+    command hx $argv
+    printf '\033[0 q'
+end
 ```
 
 # Prompt
